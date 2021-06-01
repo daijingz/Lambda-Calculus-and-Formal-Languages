@@ -1,4 +1,4 @@
-# Algorithm and Design
+# Lambda Calculus and Formal Languages
 Jingze Dai's Project
 
 This project includes lambda calculus with other formal languages' Scala, Ruby and Haskell implementations.
