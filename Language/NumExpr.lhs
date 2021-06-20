@@ -122,5 +122,34 @@ instance NumExpr FV where
 \end{code}
 
 \begin{code}
-data NE = Var String | Val Int | Add NE NE
+data NE = Var String | IVal Int | FVal Double | Add NE NE | Sub NE NE | Mul NE NE | Div NE NE | Exp NE NE | Mod NE NE | Sin NE | Cos NE | Tan NE 
+  deriving (Show, Eq)
+
+asNE :: NE -> NE
+asNE = id
+
+instance NumExpr NE where
+  valI x = IVal x
+  varI x = Var x
+  addI x y = Add (asNE x) (asNE y)
+  subI x y = Sub (asNE x) (asNE y)
+  mulI x y = Mul (asNE x) (asNE y)
+  divI x y = Div (asNE x) (asNE y)
+  expI x y = Exp (asNE x) (IVal y)
+  modI x y = Mod (IVal x) (IVal y)
+  radianI x = FVal x
+  degreeI x = FVal x
+  sinI x = Sin (FVal x)
+  cosI x = Cos (FVal x)
+  tanI x = Tan (FVal x)
+  mtaddI [] = IVal 0
+  mtaddI (x:xs) = Add (asNE x) (asNE (mtaddI xs))
+  mtmulI [] = IVal 0
+  mtmulI (x:xs) = Mul (asNE x) (asNE (mtmulI xs))
+
+eval1 :: NE -> Int
+
+eval2 :: NE -> Float
+
+eval3 :: NE -> Double
 \end{code}
