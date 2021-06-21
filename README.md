@@ -3,6 +3,8 @@ Jingze Dai's Project
 
 This project includes lambda calculus with other formal languages' Scala, Ruby and Haskell implementations.
 
+* To see descriptions and explanations of works please see **Documentation** folder. ()
+
 ## Scala version includes:
 * Past works
 * Basic Scala programming
