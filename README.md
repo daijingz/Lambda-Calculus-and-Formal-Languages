@@ -4,16 +4,27 @@ Jingze Dai's Project
 This project includes lambda calculus with other formal languages' Scala, Ruby and Haskell implementations.
 
 ## Scala version includes:
-1. Past works
+* Past works
+* Basic Scala programming
+* Advanced Scala libraries
 
 ## Ruby version includes:
-1. Past works
+* Past works
+* Basic Ruby programming
+* Advanced Ruby libraries
 
 ## Haskell Version includes:
-1. Past works
+* Past works
+* Basic Haskell programming
+* Advanced Haskell libraries
+
+## Other Usages (Coming)
+* Doxygen
+* Docker
+* Git command
 
 # Contact
 daij24@mcmaster.ca
-(preferred)
+**(preferred)**
 
 david1147062956@163.com
