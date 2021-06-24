@@ -147,9 +147,14 @@ instance NumExpr NE where
   mtmulI [] = IVal 0
   mtmulI (x:xs) = Mul (asNE x) (asNE (mtmulI xs))
 
-eval1 :: NE -> Int
+eval :: NE -> Double
+eval (Var _) = 0.0
+eval (IVal x) = intToDouble x
+eval (FVal x) = x
+eval (Add x y) = x + y
+eval (Sub x y) = x - y
 
-eval2 :: NE -> Float
+represent :: NE -> String
 
-eval3 :: NE -> Double
+extract :: NE -> [String]
 \end{code}
