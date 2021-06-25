@@ -46,4 +46,16 @@ newtype Pr = Pr { tf :: Bool }
 instance BoolExpr Pr where
   trueB = Pr { tf = True }
   falseB = Pr { tf = False }
+  andB x y = if tf x == False || tf y == False
+    then Pr { tf = False }
+  else Pr { tf = True }
+  orB x y = if tf x == True || tf y == True
+    then Pr { tf = True }
+  else Pr { tf = False }
+  notB x = if tf x == False
+    then Pr { tf = True }
+  else Pr { tf = False }
+  impliesB x y = if tf x == False && tf y == True
+    then Pr { tf = False }
+  else Pr { tf = True }
 \end{code}

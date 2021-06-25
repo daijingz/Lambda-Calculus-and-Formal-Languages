@@ -151,10 +151,19 @@ eval :: NE -> Double
 eval (Var _) = 0.0
 eval (IVal x) = intToDouble x
 eval (FVal x) = x
-eval (Add x y) = x + y
-eval (Sub x y) = x - y
+eval (Add x y) = eval x + eval y
+eval (Sub x y) = eval x - eval y
+eval (Mul x y) = eval x * eval y
+eval (Div x y) = eval x / eval y
+eval (Exp x y) = eval x ^^ toInteger (round (eval y))
 
 represent :: NE -> String
+represent (Var x) = "Var " ++ show x
+represent (IVal x) = "IVal " ++ show x
+represent (FVal x) = "FVal " ++ show x
 
 extract :: NE -> [String]
+extract (Var x) = [x]
+extract (IVal _) = []
+extract (FVal _) = []
 \end{code}
