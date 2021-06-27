@@ -59,3 +59,11 @@ instance BoolExpr Pr where
     then Pr { tf = False }
   else Pr { tf = True }
 \end{code}
+
+\begin{code}
+newtype Qr = Qr { listtf :: [Bool] }
+
+instance BoolExpr Qr where
+  trueB = Qr { listtf = [True] }
+  falseB = Qr { listtf = [False] }
+\end{code}

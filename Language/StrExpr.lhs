@@ -3,4 +3,7 @@
 {-# LANGUAGE NoMonomorphismRestriction #-}
 
 module StrExpr where
+
+class StrExpr expr where
+    emptyS :: StrExpr
 \end{code}
