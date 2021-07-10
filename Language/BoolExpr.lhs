@@ -11,6 +11,7 @@ class BoolExpr expr where
   orB :: expr -> expr -> expr
   notB :: expr -> expr
   impliesB :: expr -> expr -> expr
+  xorB :: expr -> expr -> expr
 
 ex1, ex2, ex3, ex4, ex5 :: BoolExpr expr => expr
 ex1 = trueB
@@ -38,6 +39,9 @@ instance BoolExpr Ir where
   impliesB x y = if value x == 0 && value y == 1
     then Ir { value = 0 }
   else Ir { value = 1 }
+  xorB x y = if value x == value y
+    then Ir { value = 0 }
+  else Ir { value = 1 }
 \end{code}
 
 \begin{code}
@@ -58,6 +62,9 @@ instance BoolExpr Pr where
   impliesB x y = if tf x == False && tf y == True
     then Pr { tf = False }
   else Pr { tf = True }
+  xorB x y = if tf x == tf y
+    then Ir { tf = False }
+  else Ir { tf = True }
 \end{code}
 
 \begin{code}
@@ -66,4 +73,9 @@ newtype Qr = Qr { listtf :: [Bool] }
 instance BoolExpr Qr where
   trueB = Qr { listtf = [True] }
   falseB = Qr { listtf = [False] }
+  andB x y = Qr { listtf = listtf x ++ listtf y }
+  orB x y = Qr { listtf = listtf x ++ listtf y }
+  notB x = Qr { listtf = listtf x }
+  impliesB x y = Qr { listtf = listtf x ++ listtf y }
+  xorB x y = Qr { listtf = listtf x ++ listtf y }
 \end{code}
