@@ -17,9 +17,9 @@ This project includes lambda calculus with other formal languages' Scala, Ruby a
 * Advanced Ruby libraries
 
 ## Haskell Version includes:
-* Past works
-* Basic Haskell programming
-* Advanced Haskell libraries
+* Past works (Including programs based on knowledges from **CS 1JC3** and **CS 3FP3**.)
+* Basic Haskell programming tools
+* Advanced Haskell libraries and their implementations.
 
 ## Other Usages (Coming)
 * Doxygen
