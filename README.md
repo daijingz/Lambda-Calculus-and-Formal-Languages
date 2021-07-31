@@ -8,12 +8,12 @@ This project includes lambda calculus with other formal languages' Scala, Ruby a
 * To view the first project (language implementation), please take a look at **Language** folder. (https://github.com/daijingz/Lambda-Calculus-and-Formal-Languages/tree/master/Language)
 
 ## Scala version (285 lines) includes:
-* Past works
+* Past works (Including programs from **CS 3MI3** and online courses)
 * Basic Scala programming
 * Advanced Scala libraries
 
 ## Ruby version includes:
-* Past works
+* Past works (Including programs from **CS 3MI3** and online courses)
 * Basic Ruby programming
 * Advanced Ruby libraries
 
